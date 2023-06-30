@@ -1,4 +1,6 @@
 
+#E fecha o processo
+
 import subprocess
 
 def execute_netstat():
@@ -22,3 +24,14 @@ def execute_tasklist(pid):
 
 pid = input("Informe seu PID: ")
 execute_tasklist(pid)
+
+#
+fechar_processo = input("Deseja fechar o processo? (y/n): ")
+if fechar_processo.lower() == 'y':
+    try:
+        subprocess.check_call(['taskkill', '/F', '/PID', pid])
+        print(f"Processo com PID {pid} foi fechado com sucesso.")
+    except subprocess.CalledProcessError as e:
+        print(f"Erro ao fechar o processo: {e}")
+else:
+    print("O processo não será fechado.")
