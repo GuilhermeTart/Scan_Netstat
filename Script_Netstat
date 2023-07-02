@@ -1,0 +1,43 @@
+##Comment
+
+
+#Permite executar comandos do sistema operacional.
+import subprocess
+
+#Função chamada 'execute_netstat():' dentro dessa função, o script executa o comando netstat /ano, que exibe estatísticas numéricas de todas as conexões de redes ativas, incluindo os endereços IP, portas e identificadores de processos (PID),Através  do 'subprocess.check_output(), que retorna a saída do comando, em seguida imprime a saída descodificada, usando 'latin-1'. Caso ocorra um erro  irá exibir uma mensagem de erro, usando o 'subprocess.CalledProcessError'
+def execute_netstat():
+    try:
+        output = subprocess.check_output(['netstat', '/ano'])
+        print(output.decode('latin-1'))
+    except subprocess.CalledProcessError as e:
+        print(f"Erro ao executar o comando netstat: {e}")
+
+#Este comando chama a função 'execute_netstat(), para executar o comando'netstat /ano'e imprimir sua saída.
+execute_netstat()
+
+
+
+#Aqui temos outra função 'execute_tasklist', está função irá executar o comando tasklist | findstr + pid, que irá filtrar o pid para identificar o processo. Esse comando é executado usando o 'subprocess.check_output()' a saída é decodificada com a codificação 'latin-1', e se tiver algum erro será exibido uma mensagem, usando o  'subprocess.CalledProcessError' .
+def execute_tasklist(pid):
+    try:
+        command = f'tasklist | findstr "{pid}"'
+        output = subprocess.check_output(command, shell=True)
+        print(output.decode('latin-1'))
+    except subprocess.CalledProcessError as e:
+        print(f"Erro ao executar o comando tasklist: {e}")
+
+
+#Temos o input do PID que armazeza o valor na variável (pid), que executa o comando 'execute_tasklist(pid)' que filtra o número do PID.
+pid = input("Informe seu PID: ")
+execute_tasklist(pid)
+
+#Temos outra função que possibilita o usuário fechar os processos pelo PID, Ultizando o 'subprocess.check_call()' que execulta o comando tasklist /F /PID, e exibe se foi fechado com sucesso ou não.
+fechar_processo = input("Deseja fechar o processo? (y/n): ")
+if fechar_processo.lower() == 'y':
+    try:
+        subprocess.check_call(['taskkill', '/F', '/PID', pid])
+        print(f"Processo com PID {pid} foi fechado com sucesso.")
+    except subprocess.CalledProcessError as e:
+        print(f"Erro ao fechar o processo: {e}")
+else:
+    print("O processo não será fechado.")
