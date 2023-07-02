@@ -3,6 +3,23 @@
 #Permite executar comandos do sistema operacional.
 import subprocess
 
+print(r"""
+  ____ _   _ ___ _     _   _ _____ ____  __  __ _____      _   _   _  ____ _   _ ____ _____ ___  
+ / ___| | | |_ _| |   | | | | ____|  _ \|  \/  | ____|    / \ | | | |/ ___| | | / ___|_   _/ _ \ 
+| |  _| | | || || |   | |_| |  _| | |_) | |\/| |  _|     / _ \| | | | |  _| | | \___ \ | || | | |
+| |_| | |_| || || |___|  _  | |___|  _ <| |  | | |___   / ___ \ |_| | |_| | |_| |___) || || |_| |
+ \____|\___/|___|_____|_| |_|_____|_| \_\_|  |_|_____| /_/   \_\___/ \____|\___/|____/ |_| \___/ 
+                                                                                                 
+             __  __  ___  _   _ ___ _____ ___  ____    _   _ _____ _______        _____  ____  _  __
+            |  \/  |/ _ \| \ | |_ _|_   _/ _ \|  _ \  | \ | | ____|_   _\ \      / / _ \|  _ \| |/ /
+            | |\/| | | | |  \| || |  | || | | | |_) | |  \| |  _|   | |  \ \ /\ / / | | | |_) | ' / 
+            | |  | | |_| | |\  || |  | || |_| |  _ <  | |\  | |___  | |   \ V  V /| |_| |  _ <| . \ 
+            |_|  |_|\___/|_| \_|___| |_| \___/|_| \_\ |_| \_|_____| |_|    \_/\_/  \___/|_| \_\_|\_\
+                                                                                                    
+
+""")
+
+
 #Função chamada 'execute_netstat():' dentro dessa função, o script executa o comando netstat /ano, que exibe estatísticas numéricas de todas as conexões de redes ativas, incluindo os endereços IP, portas e identificadores de processos (PID),Através  do 'subprocess.check_output(), que retorna a saída do comando, em seguida imprime a saída descodificada, usando 'latin-1'. Caso ocorra um erro  irá exibir uma mensagem de erro, usando o 'subprocess.CalledProcessError'
 def execute_netstat():
     try:
