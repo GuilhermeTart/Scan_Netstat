@@ -44,7 +44,7 @@ def execute_tasklist(pid):
 
 
 #Temos o input do PID que armazeza o valor na variável (pid), que executa o comando 'execute_tasklist(pid)' que filtra o número do PID.
-pid = input("Informe seu PID: ")
+pid = input("Informe o PID: ")
 execute_tasklist(pid)
 
 #Temos outra função que possibilita o usuário fechar os processos pelo PID. Ultizando o 'subprocess.check_call()' que execulta o comando tasklist /F /PID, e exibe se foi fechado com sucesso ou não.
