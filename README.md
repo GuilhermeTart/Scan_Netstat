@@ -10,4 +10,5 @@ Netstat é uma ferramenta de linha de comando que exibe informações sobre cone
 
 
 ####Scan_Netstat_Windows
-file:///home/guilherme/Imagens/win
+![image](https://github.com/GuilhermeTart/Scan_Netstat/assets/136984328/1dbca12e-25b7-4719-919c-533565717955)
+
