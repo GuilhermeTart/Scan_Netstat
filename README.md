@@ -3,7 +3,7 @@ Este repositório contém um script em Python que realiza a execução do comand
 
 
 ## O que é Netstat?
-Netstat é uma ferramenta de linha de comando que exibe informações sobre conexões de rede ativas, portas abertas e estatísticas de tráfego, ajudando a monitorar e solucionar problemas na rede.
+Netstat é uma ferramenta de linha de comando que exibe informações sobre conexões de redes ativas, portas abertas e estatísticas de tráfego, ajudando a monitorar e solucionar problemas na rede.
 
 ### Scan_Netstat_Linux
 ![image](https://github.com/GuilhermeTart/Scan_Netstat/assets/136984328/ecf441d8-de3e-4266-8de8-24f0d0567c43)
