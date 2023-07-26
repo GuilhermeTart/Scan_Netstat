@@ -17,7 +17,7 @@ print(r"""
 
 """)
 
-# Essa função executa o comando 'netstat ss -tunap'. O parâmetro 'ss' faz uma análise de sockets no linux, que pode fornecer informações detalhadas sobre a conexão de rede, e a opção '-tunap' t= Exibe conexões TCP, u= Exibe conexões UDP, n= Exibe o número de portas ao invés de nomes de serviço, a= Inclui sockets de escuta e conexões não estabelecidas, p= Mostra informações sobre os processos associados a cada conexão. Após isso irá printar a saída do comando com a formatação 'utf-8', ou caso ocorra algum erro, irá exibir uma mensagem de erro.def execute_netstat():def execute_netstat():
+# Essa função executa o comando 'netstat ss -tunap'. O parâmetro 'ss' faz uma análise de sockets no linux, que pode fornecer informações detalhadas sobre a conexão de rede, e a opção '-tunap' t= Exibe conexões TCP, u= Exibe conexões UDP, n= Exibe o número de portas ao invés de nomes de serviço, a= Inclui sockets de escuta e conexões não estabelecidas, p= Mostra informações sobre os processos associados a cada conexão. Após isso irá printar a saída do comando com a formatação 'utf-8', ou caso ocorra algum erro, irá exibir uma mensagem de erro.:
 def execute_netstat():
     try:
       output = subprocess.check_output(['netstat', 'ss', '-tunap']) #check_output, é uma função do módulo subprocess que executa um comando especificado e retorna sua saída em sequência de bytes
