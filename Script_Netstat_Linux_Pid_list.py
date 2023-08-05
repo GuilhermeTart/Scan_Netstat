@@ -36,7 +36,7 @@ oi = str(pid.strip()) #Variável que   tira o espaço os pids
 oi1 = oi.split() #Variável que   transforma os pids em lista
 
 
-# Essa função irá executar o comando 'ps -p +PID' que irá filtrar o pid colocado pelo usuário.
+# Essa função irá executar o comando 'ps -p +PID' que irá filtrar a lista de  pid colocado pelo usuário.
 for pid in pid.split():
       try:
         command = f'ps -p {pid}'
@@ -47,11 +47,12 @@ for pid in pid.split():
 
 
 
-# Essa função Permite o usuário fechar um processo usando o comando 'kill -9 + pid'
+#Input que armazena se o usuário deseja fechar o processo ou não
 fechar_processo = input("Deseja fechar o processo? (y/n): ")
 if fechar_processo.lower() == 'y':
     
-    
+
+#Estrutura de repetição que fecha a lista de pids
    for i in oi1:
     try:
         subprocess.check_call(['kill', '-9', pid, i])
