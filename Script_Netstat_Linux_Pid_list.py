@@ -31,11 +31,11 @@ execute_netstat()
 
 
 #Colocamos as variáveis como globais, para podermos usá-las dentro e fora das funções.global pid 
-global oi
-global oi1
+global list
+global list1
 pid = input(colors.blue + "Informe o PID:  " + colors.reset) #Variável que  recebe os pids
-oi = str(pid.strip()) #Variável que   tira o espaço os pids
-oi1 = oi.split() #Variável que   transforma os pids em lista
+list = str(pid.strip()) #Variável que   tira o espaço os pids
+list1 = list.split() #Variável que   transforma os pids em lista
 
 
 # Essa função irá executar o comando 'ps -p +PID' que irá filtrar a lista de  pid colocado pelo usuário.
@@ -55,7 +55,7 @@ if fechar_processo.lower() == 'y':
     
 
 #Estrutura de repetição que fecha a lista de pids
-   for i in oi1:
+   for i in list1:
     try:
         subprocess.check_call(['kill', '-9', pid, i])
         print( colors.red + f"Processo com PID {pid} foi fechado com sucesso." + colors.reset)
