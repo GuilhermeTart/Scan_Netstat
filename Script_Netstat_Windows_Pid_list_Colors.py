@@ -39,11 +39,11 @@ execute_netstat()
     
 
 #Colocamos as variáveis como globais, para podermos usá-las dentro e fora das funções.global pid 
-global oi
-global oi1
+global list
+global list1
 pid = input(colors.blue + "Informe o PID:  " + colors.reset) #Variável que  recebe os pids
-oi = str(pid.strip()) #Variável que   tira o espaço os pids
-oi1 = oi.split() #Variável que   transforma os pids em lista
+list = str(pid.strip()) #Variável que   tira o espaço os pids
+list1 = list.split() #Variável que   transforma os pids em lista
 
 
 #Estrutura de repetição que faz a filtragem da lista de pids
