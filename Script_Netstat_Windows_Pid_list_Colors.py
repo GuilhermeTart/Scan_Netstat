@@ -64,7 +64,7 @@ if fechar_processo.lower() == 'y':
 
 
 #Estrutura de repetição que fecha a lista de pids
-    for i in oi1:
+    for i in list1:
         try:
             subprocess.check_call([f'taskkill', '/F', '/PID', i])
             print(f"Processo com PID {pid} foi fechado com sucesso.")
